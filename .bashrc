@@ -69,10 +69,7 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
+    alias grep='grep -n --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
@@ -124,7 +121,6 @@ export PATH=/home/bueler/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
-#alias marmaduke='ssh -XY bueler@marmaduke.gi.alaska.edu'  # DEPRECATED
 alias beau='ssh -XY bueler@beauregard.gi.alaska.edu'
 alias dogbert='ssh -XY bueler@dogbert.gi.alaska.edu'
 alias wwwdms='ssh -XY bueler@www.dms.uaf.edu'
@@ -134,10 +130,7 @@ alias make='make -j4'
 alias octave='octave --silent --traditional'
 alias pylab='ipython --pylab --no-confirm-exit --no-banner'
 alias tm='texmaker'
-alias sedit='seamonkey -edit'
-alias grep='grep -n --color=auto'
 alias less='less -R'
 alias nch='ncdump -h'
 alias ncv='ncview'
-alias gitlog='git log --stat'
 
