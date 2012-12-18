@@ -100,7 +100,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
-# ELB added 12/1/2011
+# ELB added
 
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
@@ -114,10 +114,11 @@ export PS1='\u@\h \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 
 export EDITOR=/usr/bin/gedit
 
-export PETSC_DIR=/home/bueler/petsc-3.3-p5
+export PETSC_DIR=~/petsc-3.3-p5
 #export PETSC_ARCH=linux-c-opt
 export PETSC_ARCH=linux-c-dbg
-export PATH=/home/bueler/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
+
+export PATH=~/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
