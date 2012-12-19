@@ -120,7 +120,7 @@ export PETSC_ARCH=linux-c-dbg
 
 export PATH=~/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
 
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 alias beau='ssh -XY bueler@beauregard.gi.alaska.edu'
 alias dogbert='ssh -XY bueler@dogbert.gi.alaska.edu'
