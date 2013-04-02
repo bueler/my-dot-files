@@ -1,0 +1,4 @@
+% produces pretty good figures with "print -dpdf foo.pdf"
+set(0,'defaultaxesfontsize',12.0)
+set(0,'defaultlinelinewidth',3.0)
+
