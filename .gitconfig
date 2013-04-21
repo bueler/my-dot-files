@@ -1,6 +1,8 @@
 [user]
 	name = Ed Bueler
 	email = elbueler@alaska.edu
+[core]
+    pager = less -r
 [color]
     ui = auto
 [color "branch"]
