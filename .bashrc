@@ -136,3 +136,5 @@ alias less='less -R'
 alias nch='ncdump -h'
 alias ncv='ncview'
 
+# bash has a stupid time; use the gnu version
+alias time='/usr/bin/time --portability'
