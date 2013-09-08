@@ -135,6 +135,7 @@ alias tm='texmaker'
 alias less='less -R'
 alias nch='ncdump -h'
 alias ncv='ncview'
+alias recent='ls -lht | head -n 10'
 
 # bash has a stupid time; use the gnu version
 alias time='/usr/bin/time --portability'
