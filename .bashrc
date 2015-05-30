@@ -140,3 +140,4 @@ alias recent='ls -lht | head -n 10'
 
 # bash has a stupid time; use the gnu version
 alias time='/usr/bin/time --portability'
+alias timer='time -f "real %e"'
