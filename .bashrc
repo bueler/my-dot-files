@@ -115,10 +115,9 @@ export PS1='\[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '  # Vera made me do
 
 export EDITOR=/usr/bin/gedit
 
-export PETSC_DIR=~/petsc-3.3-p5
-#export PETSC_DIR=~/petsc-3.4.0
-export PETSC_ARCH=linux-c-opt
-#export PETSC_ARCH=linux-c-dbg
+export PETSC_DIR=~/petsc
+#export PETSC_ARCH=linux-c-opt
+export PETSC_ARCH=linux-c-dbg
 
 export PATH=~/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
 
@@ -129,7 +128,7 @@ alias dogbert='ssh -XY bueler@dogbert.gi.alaska.edu'
 alias wwwdms='ssh -XY bueler@www.dms.uaf.edu'
 alias pacman='ssh -XY bueler@pacman.arsc.edu'
 
-alias make='make -j4'
+#alias make='make -j4'
 alias octave='octave --silent --traditional'
 alias pylab='ipython --pylab --no-confirm-exit --no-banner'
 alias tm='texmaker'
