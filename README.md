@@ -18,5 +18,5 @@ Here are random hints about stuff for my setup:
 
   * to print two-sided with page range:
   
-        lpr -P Brother-HL-3170CDW-series -o BRDuplex=DuplexNoTumble -o page-ranges=1-4,7,9-12 foo.pdf
+        lpr -P Brother-HL-3170CDW-series -o Duplex=DuplexNoTumble -o page-ranges=1-4,7,9-12 foo.pdf
 
