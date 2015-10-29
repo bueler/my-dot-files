@@ -68,10 +68,10 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep -n --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+    alias ls='ls --color=always'
+    alias grep='grep -n --color=always'
+    alias fgrep='fgrep --color=always'
+    alias egrep='egrep --color=always'
 fi
 
 # some more ls aliases
@@ -140,3 +140,5 @@ alias recent='ls -lht | head -n 10'
 # bash has a stupid time; use the gnu version
 alias time='/usr/bin/time --portability'
 alias timer='time -f "real %e"'
+
+alias btm='texmaker book.tex -master'
