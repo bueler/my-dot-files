@@ -129,7 +129,7 @@ alias wwwdms='ssh -XY bueler@www.dms.uaf.edu'
 alias pacman='ssh -XY bueler@pacman.arsc.edu'
 
 #alias make='make -j4'
-alias octave='octave --silent --traditional'
+alias octave='octave --silent --traditional --no-gui'
 alias pylab='ipython --pylab --no-confirm-exit --no-banner'
 alias tm='texmaker'
 alias less='less -R'
