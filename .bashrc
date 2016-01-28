@@ -141,4 +141,5 @@ alias recent='ls -lht | head -n 10'
 alias time='/usr/bin/time --portability'
 alias timer='time -f "real %e"'
 
-alias btm='texmaker book.tex -master'
+alias btm='texmaker ../book.tex -master'  # designed to work from petsc-master/tex/chaps/
+
