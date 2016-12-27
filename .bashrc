@@ -121,7 +121,7 @@ export PETSC_ARCH=linux-c-dbg
 
 export P4PDES_DIR=~/repos/p4pdes
 
-export PATH=~/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
+export PATH=~/.local/bin:~/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
 
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
