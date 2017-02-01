@@ -6,3 +6,7 @@ set(0,'defaultlinelinewidth',3.0)
 
 pkg load all   % e.g. odepkg
 
+% real Matlab compatibility: make all Octave stupidity (extensions) into errors
+warning('on','Octave:language-extension')
+warning('error')
+
