@@ -111,7 +111,7 @@ function parse_git_branch {
 }
 
 #export PS1='\u@\h \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
-export PS1='\[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '  # Vera made me do it
+export PS1='\[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 
 export EDITOR=/usr/bin/gedit
 
@@ -127,8 +127,11 @@ export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.
 
 alias beau='ssh -XY bueler@beauregard.gi.alaska.edu'
 alias dogbert='ssh -XY bueler@dogbert.gi.alaska.edu'
-alias wwwdms='ssh -XY bueler@www.dms.uaf.edu'
-alias pacman='ssh -XY bueler@pacman.arsc.edu'
+alias fish='ssh -XY bueler@fish.arsc.edu'
+alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
+alias chinook00='ssh -XY -l elbueler chinook00.alaska.edu'
+alias chinook01='ssh -XY -l elbueler chinook01.alaska.edu'
+alias chinook03='ssh -XY -l elbueler chinook03.alaska.edu'
 
 #alias make='make -j4'
 alias octave='octave --silent --traditional --no-gui'
