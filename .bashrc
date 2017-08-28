@@ -135,6 +135,7 @@ alias chinook03='ssh -XY -l elbueler chinook03.alaska.edu'
 
 #alias make='make -j4'
 alias octave='octave --silent --traditional --no-gui'
+alias ipy='ipython --no-confirm-exit --no-banner'
 alias pylab='ipython --pylab --no-confirm-exit --no-banner'
 alias tm='texmaker'
 alias less='less -R'
