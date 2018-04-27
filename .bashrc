@@ -149,3 +149,6 @@ alias timer='time -f "real %e"'
 
 alias btm='texmaker ../book.tex -master'  # designed to work from petsc-master/tex/chaps/
 
+# start-up firedrake with unset PETSC stuff
+alias drakeme='unset PETSC_DIR; unset PETSC_ARCH; source ~/firedrake/bin/activate'
+
