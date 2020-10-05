@@ -121,13 +121,12 @@ export PETSC_ARCH=linux-c-dbg
 
 export P4PDES_DIR=~/repos/p4pdes
 
-export PATH=~/.local/bin:~/usr/local/bin:$PETSC_DIR/$PETSC_ARCH/bin:$PATH
+export PATH=$PETSC_DIR/$PETSC_ARCH/bin:~/paraview/bin:~/.local/bin:~/usr/local/bin:$PATH
 
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 alias beau='ssh -XY bueler@beauregard.gi.alaska.edu'
 alias dogbert='ssh -XY bueler@dogbert.gi.alaska.edu'
-alias fish='ssh -XY bueler@fish.arsc.edu'
 alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
 alias chinook00='ssh -XY -l elbueler chinook00.alaska.edu'
 alias chinook01='ssh -XY -l elbueler chinook01.alaska.edu'
@@ -151,4 +150,7 @@ alias btm='texmaker ../book.tex -master'  # designed to work from petsc-master/t
 
 # start-up firedrake with unset PETSC stuff
 alias drakeme='unset PETSC_DIR; unset PETSC_ARCH; source ~/firedrake/bin/activate'
+
+# good mpiexec with bindings
+alias mpg='mpiexec --bind-to hwthread --map-by core'
 
