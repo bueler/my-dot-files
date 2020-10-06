@@ -153,4 +153,5 @@ alias drakeme='unset PETSC_DIR; unset PETSC_ARCH; source ~/firedrake/bin/activat
 
 # good mpiexec with bindings
 alias mpg='mpiexec --bind-to hwthread --map-by core'
+alias tmpg='time -f "real %e" mpiexec --bind-to hwthread --map-by core'
 
