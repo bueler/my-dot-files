@@ -110,10 +110,9 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
-#export PS1='\u@\h \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 export PS1='\[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 
-export EDITOR=/usr/bin/gedit
+export EDITOR=/usr/bin/atom
 
 export PETSC_DIR=~/petsc
 #export PETSC_ARCH=linux-c-opt
@@ -126,7 +125,6 @@ export PATH=$PETSC_DIR/$PETSC_ARCH/bin:~/paraview/bin:~/.local/bin:~/usr/local/b
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 alias beau='ssh -XY bueler@beauregard.gi.alaska.edu'
-alias dogbert='ssh -XY bueler@dogbert.gi.alaska.edu'
 alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
 alias chinook00='ssh -XY -l elbueler chinook00.alaska.edu'
 alias chinook01='ssh -XY -l elbueler chinook01.alaska.edu'
@@ -155,3 +153,5 @@ alias drakeme='unset PETSC_DIR; unset PETSC_ARCH; source ~/firedrake/bin/activat
 alias mpg='mpiexec --bind-to hwthread --map-by core'
 alias tmpg='time -f "real %e" mpiexec --bind-to hwthread --map-by core'
 
+# easy alias for atom; o.k. to clobber 'ed'
+alias ed='atom .'
