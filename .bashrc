@@ -155,3 +155,5 @@ alias tmpg='time -f "real %e" mpiexec --bind-to hwthread --map-by core'
 
 # easy alias for atom; o.k. to clobber 'ed'
 alias ed='atom .'
+alias gedit='echo "*********** USE ed ************"; atom .'
+
