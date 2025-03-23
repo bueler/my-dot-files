@@ -110,22 +110,25 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
+# minimal use of export:
 export PS1='\[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
-
 export EDITOR=/usr/bin/codium
+# avoids warning when running with Firedrake's openmpi
+export OMP_NUM_THREADS=1
 
-export PETSC_DIR=~/petsc
-#export PETSC_ARCH=linux-c-opt
-export PETSC_ARCH=linux-c-dbg
 
-alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec
-alias mpirun=$PETSC_DIR/$PETSC_ARCH/bin/mpirun
-alias paraview=paraview/bin/paraview
+############### aliases ################
 
-# above aliases replace intended effects of:
-#export PATH=$PETSC_DIR/$PETSC_ARCH/bin:~/paraview/bin:~/.local/bin:~/usr/local/bin:$PATH
+# when running PETSc directly, start with this in your shell:
+alias petscme='export PETSC_DIR=~/petsc; export PETSC_ARCH=linux-c-dbg; export mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;'
 
-alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
+# when running Firedrake, start with one of these in your shell:
+alias drakeme='source ~/firedrake/bin/activate'
+alias animateme='source ~/animate/firedrake-jan25/bin/activate'
+
+# good mpiexec with bindings
+alias mpg='mpiexec --bind-to hwthread --map-by core'
+alias tmpg='time -f "real %e" mpiexec --bind-to hwthread --map-by core'
 
 #alias make='make -j4'
 alias octave='octave --silent --traditional --no-gui'
@@ -134,25 +137,14 @@ alias tm='texmaker'
 alias less='less -R'
 alias nch='ncdump -h'
 alias ncv='ncview'
+alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
+alias paraview=paraview/bin/paraview
 
 # bash has a stupid time; use the gnu version
 alias time='/usr/bin/time --portability'
 alias timer='time -f "real %e"'
 
-# start-up firedrake with unset PETSC stuff
-# FIXME ALL FIREDRAKE VENV
-alias drakeme='unset PETSC_DIR; unset PETSC_ARCH; source ~/firedrake/bin/activate'
-alias animateme='unset PETSC_DIR; unset PETSC_ARCH; source ~/animate/firedrake-jan25/bin/activate'
-
-# good mpiexec with bindings
-alias mpg='mpiexec --bind-to hwthread --map-by core'
-alias tmpg='time -f "real %e" mpiexec --bind-to hwthread --map-by core'
-
-# avoids warning when running with Firedrake's openmpi
-export OMP_NUM_THREADS=1
-
 # easy alias for atom; o.k. to clobber 'ed'
 alias ed='codium'
 alias vscode='codium'
-alias gedit='echo "*********** USE ed ************"; atom'
-
+alias gedit='echo "*********** Ed USE ed! ************"; codium'
