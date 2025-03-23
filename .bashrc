@@ -120,13 +120,24 @@ export OMP_NUM_THREADS=1
 
 ############### aliases ################
 
-# when running PETSc directly, start with this in your shell:
+# when running PETSc directly, start with
+#   $ petscme
+# in your shell (or petscoptme below)
 petscme() {
     export PETSC_DIR=~/petsc;
     export PETSC_ARCH=linux-c-dbg;
     alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;
     alias mpg="$PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core";
     alias tmpg="time -f 'real %e' $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"
+    export PS1='(petsc) \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+}
+petscoptme() {
+    export PETSC_DIR=~/petsc;
+    export PETSC_ARCH=linux-c-opt;
+    alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;
+    alias mpg="$PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core";
+    alias tmpg="time -f 'real %e' $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"
+    export PS1='(petscopt) \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 }
 
 # when running Firedrake, start with one of these in your shell:
