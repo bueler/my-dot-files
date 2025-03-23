@@ -102,11 +102,11 @@ fi
 
 # ELB added
 
-function parse_git_dirty {
+parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]] && echo "*"
 }
 
-function parse_git_branch {
+parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
@@ -121,7 +121,13 @@ export OMP_NUM_THREADS=1
 ############### aliases ################
 
 # when running PETSc directly, start with this in your shell:
-alias petscme='export PETSC_DIR=~/petsc; export PETSC_ARCH=linux-c-dbg; alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec; alias mpg="$PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"; alias tmpg="time -f "real %e" $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"'
+petscme() {
+    export PETSC_DIR=~/petsc;
+    export PETSC_ARCH=linux-c-dbg;
+    alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;
+    alias mpg="$PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core";
+    alias tmpg="time -f 'real %e' $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"
+}
 
 # when running Firedrake, start with one of these in your shell:
 alias drakeme='source ~/firedrake/bin/activate'
