@@ -112,48 +112,47 @@ function parse_git_branch {
 
 export PS1='\[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 
-export EDITOR=/usr/bin/atom
+export EDITOR=/usr/bin/codium
 
 export PETSC_DIR=~/petsc
 #export PETSC_ARCH=linux-c-opt
 export PETSC_ARCH=linux-c-dbg
 
-export P4PDES_DIR=~/repos/p4pdes
+alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec
+alias mpirun=$PETSC_DIR/$PETSC_ARCH/bin/mpirun
+alias paraview=paraview/bin/paraview
 
-export PATH=$PETSC_DIR/$PETSC_ARCH/bin:~/paraview/bin:~/.local/bin:~/usr/local/bin:$PATH
+# above aliases replace intended effects of:
+#export PATH=$PETSC_DIR/$PETSC_ARCH/bin:~/paraview/bin:~/.local/bin:~/usr/local/bin:$PATH
 
-export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
-alias beau='ssh -XY bueler@beauregard.gi.alaska.edu'
 alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
-alias chinook00='ssh -XY -l elbueler chinook00.alaska.edu'
-alias chinook01='ssh -XY -l elbueler chinook01.alaska.edu'
-alias chinook03='ssh -XY -l elbueler chinook03.alaska.edu'
 
 #alias make='make -j4'
 alias octave='octave --silent --traditional --no-gui'
 alias ipy='ipython --no-confirm-exit --no-banner'
-alias pylab='ipython --pylab --no-confirm-exit --no-banner'
 alias tm='texmaker'
 alias less='less -R'
 alias nch='ncdump -h'
 alias ncv='ncview'
-alias recent='ls -lht | head -n 10'
 
 # bash has a stupid time; use the gnu version
 alias time='/usr/bin/time --portability'
 alias timer='time -f "real %e"'
 
-alias btm='texmaker ../book.tex -master'  # designed to work from petsc-master/tex/chaps/
-
 # start-up firedrake with unset PETSC stuff
+# FIXME ALL FIREDRAKE VENV
 alias drakeme='unset PETSC_DIR; unset PETSC_ARCH; source ~/firedrake/bin/activate'
+alias animateme='unset PETSC_DIR; unset PETSC_ARCH; source ~/animate/firedrake-jan25/bin/activate'
 
 # good mpiexec with bindings
 alias mpg='mpiexec --bind-to hwthread --map-by core'
 alias tmpg='time -f "real %e" mpiexec --bind-to hwthread --map-by core'
 
+# avoids warning when running with Firedrake's openmpi
+export OMP_NUM_THREADS=1
+
 # easy alias for atom; o.k. to clobber 'ed'
-alias ed='atom .'
-alias gedit='echo "*********** USE ed ************"; atom .'
+alias ed='codium'
+alias vscode='codium'
+alias gedit='echo "*********** USE ed ************"; atom'
 
