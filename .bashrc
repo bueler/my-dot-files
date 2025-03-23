@@ -152,7 +152,7 @@ alias less='less -R'
 alias nch='ncdump -h'
 alias ncv='ncview'
 alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
-alias paraview=paraview/bin/paraview
+alias paraview=~/paraview/bin/paraview
 
 # bash has a stupid time; use the gnu version
 alias time='/usr/bin/time --portability'
