@@ -141,8 +141,11 @@ petscoptme() {
 }
 
 # when running Firedrake, start with one of these in your shell:
-alias drakeme='source ~/firedrake/bin/activate'
-alias animateme='source ~/animate/firedrake-jan25/bin/activate'
+drakeme() {
+    source ~/firedrake/bin/activate
+    export CC=mpicc CXX=mpicxx PETSC_DIR=~/petsc-firedrake PETSC_ARCH=arch-firedrake-default HDF5_MPI=ON
+}
+#alias animateme='source ~/animate/firedrake-jan25/bin/activate'
 
 #alias make='make -j4'
 alias timer='time -f "real %e"'
