@@ -120,7 +120,7 @@ export OMP_NUM_THREADS=1
 ############### aliases ################
 
 # when running PETSc directly, start with this in your shell:
-alias petscme='export PETSC_DIR=~/petsc; export PETSC_ARCH=linux-c-dbg; export mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;'
+alias petscme='export PETSC_DIR=~/petsc; export PETSC_ARCH=linux-c-dbg; alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;'
 
 # when running Firedrake, start with one of these in your shell:
 alias drakeme='source ~/firedrake/bin/activate'
