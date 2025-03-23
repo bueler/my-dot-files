@@ -110,6 +110,7 @@ function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)]/"
 }
 
+
 # minimal use of export:
 export PS1='\[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
 export EDITOR=/usr/bin/codium
@@ -120,15 +121,11 @@ export OMP_NUM_THREADS=1
 ############### aliases ################
 
 # when running PETSc directly, start with this in your shell:
-alias petscme='export PETSC_DIR=~/petsc; export PETSC_ARCH=linux-c-dbg; alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;'
+alias petscme='export PETSC_DIR=~/petsc; export PETSC_ARCH=linux-c-dbg; alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec; alias mpg="$PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"; alias tmpg="time -f "real %e" $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"'
 
 # when running Firedrake, start with one of these in your shell:
 alias drakeme='source ~/firedrake/bin/activate'
 alias animateme='source ~/animate/firedrake-jan25/bin/activate'
-
-# good mpiexec with bindings
-alias mpg='mpiexec --bind-to hwthread --map-by core'
-alias tmpg='time -f "real %e" mpiexec --bind-to hwthread --map-by core'
 
 #alias make='make -j4'
 alias octave='octave --silent --traditional --no-gui'
