@@ -145,18 +145,17 @@ alias drakeme='source ~/firedrake/bin/activate'
 alias animateme='source ~/animate/firedrake-jan25/bin/activate'
 
 #alias make='make -j4'
-alias octave='octave --silent --traditional --no-gui'
-alias ipy='ipython --no-confirm-exit --no-banner'
-alias tm='texmaker'
+alias timer='time -f "real %e"'
 alias less='less -R'
+alias octave='octave --silent --traditional --no-gui'
+alias ipython3='ipython3 --no-confirm-exit --no-banner'
+alias tm='texmaker'
 alias nch='ncdump -h'
 alias ncv='ncview'
 alias chinook='ssh -XY -l elbueler chinook.alaska.edu'
-alias paraview=~/paraview/bin/paraview
 
-# bash has a stupid time; use the gnu version
-alias time='/usr/bin/time --portability'
-alias timer='time -f "real %e"'
+# aliases for certain locally-installed things?:
+alias paraview=~/paraview/bin/paraview
 
 # easy alias for atom; o.k. to clobber 'ed'
 alias ed='codium'
