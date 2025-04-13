@@ -142,8 +142,8 @@ petscoptme() {
 
 # when running Firedrake, start with one of these in your shell:
 drakeme() {
-    source ~/firedrake/bin/activate
-    export CC=mpicc CXX=mpicxx PETSC_DIR=~/petsc-firedrake PETSC_ARCH=arch-firedrake-default HDF5_MPI=ON
+    source ~/Firedrake/venv-firedrake/bin/activate
+    export CC=mpicc CXX=mpicxx PETSC_DIR=~/Firedrake/petsc PETSC_ARCH=arch-firedrake-default HDF5_MPI=ON
 }
 #alias animateme='source ~/animate/firedrake-jan25/bin/activate'
 
