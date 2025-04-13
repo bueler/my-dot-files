@@ -128,23 +128,25 @@ petscme() {
     export PETSC_ARCH=linux-c-dbg;
     alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;
     alias mpg="$PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core";
-    alias tmpg="time -f 'real %e' $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"
-    export PS1='(petsc) \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+    alias tmpg="time -f 'real %e' $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core";
+    export PS1='(petsc) \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ ';
 }
 petscoptme() {
     export PETSC_DIR=~/petsc;
     export PETSC_ARCH=linux-c-opt;
     alias mpiexec=$PETSC_DIR/$PETSC_ARCH/bin/mpiexec;
     alias mpg="$PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core";
-    alias tmpg="time -f 'real %e' $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core"
-    export PS1='(petscopt) \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ '
+    alias tmpg="time -f 'real %e' $PETSC_DIR/$PETSC_ARCH/bin/mpiexec --bind-to hwthread --map-by core";
+    export PS1='(petscopt) \[\033[0;33m\]\w\[\033[0m\]$(parse_git_branch)$ ';
 }
 
 # when running Firedrake, start with one of these in your shell:
 drakeme() {
-    source ~/Firedrake/venv-firedrake/bin/activate
-    export CC=mpicc CXX=mpicxx PETSC_DIR=~/Firedrake/petsc PETSC_ARCH=arch-firedrake-default HDF5_MPI=ON
-}
+    source ~/firedrake/bin/activate;
+    export CC=mpicc CXX=mpicxx PETSC_DIR=~/petsc-firedrake PETSC_ARCH=arch-firedrake-default HDF5_MPI=ON;
+    alias mpg="mpiexec --bind-to hwthread --map-by core";
+    alias tmpg="time mpiexec --bind-to hwthread --map-by core";
+ }
 #alias animateme='source ~/animate/firedrake-jan25/bin/activate'
 
 #alias make='make -j4'
